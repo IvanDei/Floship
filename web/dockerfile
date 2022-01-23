@@ -1,0 +1,7 @@
+FROM python:3.8
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /django_store
+WORKDIR /django_store
+COPY requirements.txt /django_store/
+RUN pip install --upgrade pip && pip install -r requirements.txt
+ADD . /django_store/
